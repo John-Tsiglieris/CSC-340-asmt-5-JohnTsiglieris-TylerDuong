@@ -12,29 +12,40 @@ int main() {
 	
 	// Add 10 distinct products to the vector
 	// Create an adjacency list?
-	LinkedBag<Product> distinctProducts;
-	distinctProducts.add(Product("Product1", "Description1", 3, 14));
-	distinctProducts.add(Product("Product2", "Description2", 4.5, 11));
-	distinctProducts.add(Product("Product3", "Description3", 5.5, 38));
-	distinctProducts.add(Product("Product4", "Description4", 4.5, 22));
-	distinctProducts.add(Product("Product5", "Description5", 7.7, 31));
-	distinctProducts.add(Product("Product6", "Description6", 1.3, 75));
-	distinctProducts.add(Product("Product7", "Description7", 0.4, 45));
-	distinctProducts.add(Product("Product8", "Description8", 5.5, 27));
-	distinctProducts.add(Product("Product9", "Description9", 9, 101));
-	distinctProducts.add(Product("Product10", "Description10", 7, 100));
+	LinkedBag<Product> products;
+	products.add(Product("Product1", "Description1", 3, 14));
+	products.add(Product("Product2", "Description2", 4.5, 11));
+	products.add(Product("Product3", "Description3", 5.5, 38));
+	products.add(Product("Product4", "Description4", 4.5, 22));
+	products.add(Product("Product5", "Description5", 7.7, 31));
+	products.add(Product("Product6", "Description6", 1.3, 75));
+	products.add(Product("Product7", "Description7", 0.4, 45));
+	products.add(Product("Product8", "Description8", 5.5, 27));
+	products.add(Product("Product9", "Description9", 9, 101));
+	products.add(Product("Product10", "Description10", 7, 100));
 	
+	Graph<Product> graph = new Graph(10, false); // Init the graph with 10 verticies. It is undirected
 
-	
-	
-
-	// Initialize a graph with n vertices (where n is the number of Products) 
-	//	 Indicate whether it is directed or undirected 
-	// TO DO 
-
+	// Insert a comment on why we chose not directed. OR directed if we decide to change
 
 	// Add 15-20 edges (productA, productB, weight)
-	// TO DO 
+	graph.addEdge(0, 1, 0.1);
+	graph.addEdge(0, 3, 0.15);
+	graph.addEdge(0, 4, 0.6);
+	graph.addEdge(1, 2, 0.58);
+	graph.addEdge(1, 7, 0.9);
+	graph.addEdge(1, 8, 0.2);
+	graph.addEdge(2, 0, 0.43);
+	graph.addEdge(2, 5, 0.4);
+	graph.addEdge(3, 5, 0.7);
+	graph.addEdge(4, 6, 0.88);
+	graph.addEdge(4, 8, 0.91);
+	graph.addEdge(5, 8, 0.2);
+	graph.addEdge(6, 0, 0.6);
+	graph.addEdge(7, 3, 0.5);
+	graph.addEdge(8, 6, 0.8);
+
+
 
 	// Print the adjacency list
 	productGraph.printGraph();
