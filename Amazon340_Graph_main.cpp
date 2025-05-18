@@ -70,10 +70,11 @@ int main() {
 
 	// Depth First traversal should print product information not just indices
 	int start = 0;
-	// Call DFT 
-	// productGraph.DFT(0, ...);
+	graph.DFT(start, products); // Call DFT 
 
-
+	// ======================================================
+	// Extra credit: Depth First Search
+	// ======================================================
 	bool found = false;
 	// Depth First search
 	string prodName1 = ""; //replace with a product nanme that exists 

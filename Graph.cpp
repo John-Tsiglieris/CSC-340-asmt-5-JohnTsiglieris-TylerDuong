@@ -1,4 +1,5 @@
 #include "Graph.h"
+#include "Product.h"
 
 
 // Constructor
@@ -60,17 +61,29 @@ const LinkedBag<pair<int, T>>& Graph<T>::getNeighbors(int vertex) const {
 
 // DFS Traversal (Recursive approach)
 template <typename T>
-void Graph<T>::DFT(int start) const {
+void Graph<T>::DFT(int start, const LinkedBag<pair<int, Product>>& products) const {
     vector<bool> visited(V, false); // To keep track of visited vertices
-    DFTRecursive(start, visited);
+    vector<T> productsList = products.toVector(); // Convert LinkedBag to vector for easier access
+    DFTRecursive(start, visited, productsList);
     cout << endl;
 }
 
 // Utility function for DFS (Recursive)
 template <typename T>
-void Graph<T>::DFTRecursive(int v, vector<bool>& visited) const {
+void Graph<T>::DFTRecursive(int v, vector<bool>& visited, const vector<Product>& products) const {
     visited[v] = true;
-    cout << v << " "; // Visit the current vertex
+    // Print the product information instead of just the vertex index
+    // Use LinkedBag.toVector() to get the product information
+    /*
+    for (const auto& product : products.toVector()) {
+        if (product.first == v) {
+            cout << "Product: " << product.second.getName() << ", Description: " << product.second.getDescription() << endl;
+            break; // Assuming unique vertex-product mapping
+        }
+    }
+    */
+    cout << products[v].getName << endl;
+
 
     // Recur for all the vertices adjacent to this vertex
     for (const auto& neighbor : adjList[v]) {
