@@ -27,12 +27,24 @@ int Graph<T>::getNumVertices() const{
 	return V;
 }
 
+/*
 // Print the adjacency list
 template <typename T>
 void Graph<T>::printGraph() const {
     for (int i = 0; i < V; ++i) {
         cout << "Vertex " << i << ": ";
         for (const auto& neighbor : adjList[i]) {
+            cout << "(" << neighbor.first << ", " << neighbor.second << ") ";
+        }
+        cout << endl;
+    }
+}
+*/
+template <typename T>
+void Graph<T>::printGraph() const {
+    for (int i = 0; i < V; ++i) {
+        cout << "Vertex " << i << ": ";
+        for (const auto& neighbor : adjList[i].toVector()) {
             cout << "(" << neighbor.first << ", " << neighbor.second << ") ";
         }
         cout << endl;
