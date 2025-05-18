@@ -82,7 +82,7 @@ void Graph<T>::DFTRecursive(int v, vector<bool>& visited, const vector<Product>&
         }
     }
     */
-    cout << products[v].getName << endl;
+    cout << products[v].getName() << endl;
 
 
     // Recur for all the vertices adjacent to this vertex
